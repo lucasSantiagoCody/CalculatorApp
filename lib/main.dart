@@ -117,12 +117,18 @@ class _MyAppState extends State<MyApp> {
                   calculate('ac');
                 },
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateColor.resolveWith((state) => Colors.grey),
-                  
-                  shape: MaterialStateProperty.all(const CircleBorder()),
-                  padding: MaterialStateProperty.all(const EdgeInsets.all(29)),
-                ),
+                    backgroundColor:
+                        MaterialStateColor.resolveWith((state) => Colors.grey),
+                    shape: MaterialStateProperty.all(const CircleBorder()),
+                    padding:
+                        MaterialStateProperty.all(const EdgeInsets.all(29)),
+                    overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                    ),
                 child: const Text(
                   'AC',
                   style: TextStyle(color: Colors.white, fontSize: 30),
@@ -135,15 +141,25 @@ class _MyAppState extends State<MyApp> {
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateColor.resolveWith((state) => Colors.grey),
-                    
                     minimumSize:
-                        MaterialStateProperty.all(const Size(100, 50))),
-                  child: const Text(
-                    '+/-',
-                    style: TextStyle(
-                      color: Colors.white,
+                        MaterialStateProperty.all(
+                          const Size(100, 50)
                     ),
+                        
+                    overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                ),
+                    
+                child: const Text(
+                  '+/-',
+                  style: TextStyle(
+                    color: Colors.white,
                   ),
+                ),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -153,7 +169,14 @@ class _MyAppState extends State<MyApp> {
                     backgroundColor:
                         MaterialStateColor.resolveWith((state) => Colors.grey),
                     minimumSize:
-                        MaterialStateProperty.all(const Size(100, 50))),
+                        MaterialStateProperty.all(const Size(100, 50)),
+                    overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })    
+                    ),
                 child: const Text(
                   '%',
                   style: TextStyle(
@@ -169,7 +192,14 @@ class _MyAppState extends State<MyApp> {
                       backgroundColor: MaterialStateColor.resolveWith(
                           (state) => Colors.orange),
                       minimumSize:
-                          MaterialStateProperty.all(const Size(100, 50))),
+                          MaterialStateProperty.all(const Size(100, 50)),
+                      overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.orange.shade100;
+                      }
+                      return null;
+                    })    
+                      ),
                   child: Image.asset(
                     'assets/images/divided-icon.png',
                     width: 20,
@@ -185,7 +215,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '7',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -197,7 +234,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '8',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -209,7 +253,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '9',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -223,7 +274,14 @@ class _MyAppState extends State<MyApp> {
                   backgroundColor: MaterialStateColor.resolveWith((state) {
                     return Colors.orange;
                   }),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.orange.shade100;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 'x',
                 style: TextStyle(color: Colors.black, fontSize: 25),
@@ -238,7 +296,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '4',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -250,7 +315,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '5',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -262,7 +334,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '6',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -274,7 +353,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.orange),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.orange.shade100;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '-',
                 style: TextStyle(color: Colors.black, fontSize: 30),
@@ -289,7 +375,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '1',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -301,7 +394,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '2',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -313,7 +413,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '3',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -325,7 +432,14 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.orange),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.orange.shade100;
+                      }
+                      return null;
+                    })
+                  ),
               child: const Text(
                 '+',
                 style: TextStyle(color: Colors.black, fontSize: 30),
@@ -341,7 +455,15 @@ class _MyAppState extends State<MyApp> {
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
                   minimumSize: MaterialStateProperty.all(const Size(220, 60)),
-                  alignment: Alignment.centerLeft),
+                  alignment: Alignment.centerLeft,
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
+                  
+                  ),
               child: const Text(
                 '0',
                 style: TextStyle(color: Colors.white, fontSize: 30),
@@ -355,6 +477,12 @@ class _MyAppState extends State<MyApp> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.grey),
                   minimumSize: MaterialStateProperty.all(const Size(100, 20)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.blue;
+                      }
+                      return null;
+                    })
                 ),
                 child: const Padding(
                   padding: EdgeInsets.only(bottom: 15),
@@ -370,7 +498,15 @@ class _MyAppState extends State<MyApp> {
               },
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.orange),
-                  minimumSize: MaterialStateProperty.all(const Size(100, 50))),
+                  minimumSize: MaterialStateProperty.all(const Size(100, 50)),
+                  overlayColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.hovered)) {
+                        return Colors.orange.shade100;
+                      }
+                      return null;
+                    })
+                  
+                  ),
               child: const Text(
                 '=',
                 style: TextStyle(color: Colors.black, fontSize: 30),
