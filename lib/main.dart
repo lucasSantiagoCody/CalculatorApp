@@ -48,9 +48,6 @@ class _MyAppState extends State<MyApp> {
           firstNum = double.parse(number.replaceAll(',', '.'));
         }
 
-        if (tecla == 'x') {
-          operation = '  x  ';
-        }
         setState(() {
           if (tecla == '/') {
             cardOperation = '÷';
