@@ -15,6 +15,7 @@ class _MyAppState extends State<MyApp> {
   String number = '';
   double firstNum = 0.0;
   String operation = '';
+  String cardOperation = '';
 
   void calculate(String tecla) {
     switch (tecla) {
@@ -48,16 +49,17 @@ class _MyAppState extends State<MyApp> {
         }
 
         if (tecla == 'x') {
-          print('j');
           operation = '  x  ';
         }
         setState(() {
           if (tecla == '/') {
-            operation = '÷';
+            cardOperation = '÷';
           } else {
-            operation = tecla;
+            cardOperation = tecla;
           }
         });
+
+        
         number = '';
         break;
 
@@ -95,12 +97,12 @@ class _MyAppState extends State<MyApp> {
           });
         }
         setState(() {
-          operation = '';
+          cardOperation = '';
         });
       case 'ac':
         setState(() {
           number = '0';
-          operation = '';
+          cardOperation = '';
         });
         break;
       case '<':
@@ -122,28 +124,19 @@ class _MyAppState extends State<MyApp> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Visibility(
-            visible: operation.isNotEmpty,
+            visible: cardOperation.isNotEmpty,
             child: Card(
-            margin: const EdgeInsets.only(left: 400),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 10,
-                right: 10,
-                bottom: 10 
-                ),
-              child: Text(
-              operation, 
-              style: const TextStyle(
-              fontSize: 44,
-              fontWeight: FontWeight.bold,
-              
-              )),
-            )
-            
-             
+                margin: const EdgeInsets.only(left: 400),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                  child: Text(cardOperation,
+                      style: const TextStyle(
+                        fontSize: 44,
+                        fontWeight: FontWeight.bold,
+                      )),
+                )),
           ),
-          ),
-          
           Row(mainAxisAlignment: MainAxisAlignment.end, children: [
             Text(number,
                 style: const TextStyle(fontSize: 70, color: Colors.white)),
